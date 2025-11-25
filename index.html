@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fleet+ — Gestión integral de flotas</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- HEADER CON MAPA -->
+<header id="hero">
+    <div id="map"></div>
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <img src="assets/fleet_plus.png" class="logo" alt="fleet+">
+        <h1>Gestión integral de flotas</h1>
+        <p class="lead">Aplicación open-source minimalista, rápida y pensada tanto para empresas como para particulares.
+        </p>
+
+        <div class="buttons">
+            <a class="button" href="https://github.com/larry-can/fleet_plus" target="_blank">
+                <svg class="github-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21-.15.46-.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+                Ver en GitHub</a>
+           <a class="button" href="https://paypal.me/AlCanoLopez?locale.x=es_ES" target="_blank">
+                <img src="assets/paypal.png" alt="PayPal" class="paypal-img">
+                Apoya el proyecto
+            </a>
+
+        </div>
+        <div class="coming-soon">
+            <h3>Próximamente:</h3>
+            <div class="chips">
+                <span class="chip">GPS Tracker</span>
+                <span class="chip">App móvil</span>
+                <span class="chip">Calendario General de Vehículos (CGV), con avisos y recordatorios</span>
+        </div>
+    </div>
+
+    </div>
+</header>
+
+<div id="google_translate_element" style="position: fixed; top: 10px; right: 10px; z-index: 2000;"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+  }, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<section class="features">
+    <h2 class="features-title">Funcionalidades principales</h2>
+
+    <div class="features-grid">
+
+        <!-- 1 VEHÍCULOS -->
+        <div class="feature-card">
+            <i class="ri-car-line"></i>
+            <h3>Vehículos</h3>
+            <p>Gestiona toda tu flota de forma clara y ordenada. Genera informes completos por vehículo.</p>
+        </div>
+
+        <!-- 2 COMPONENTES -->
+        <div class="feature-card">
+            <i class="ri-tools-line"></i>
+            <h3>Componentes</h3>
+            <p>Crea el listado que desees con los tipos de componentes que mejor se adapte a tus necesidades.</p>
+        </div>
+
+        <!-- 3 PRODUCTOS -->
+        <div class="feature-card">
+            <i class="ri-archive-2-line"></i>
+            <h3>Productos</h3>
+            <p>Crea, modifica y elimina cualquier producto, organizados por tipo de componente.</p>
+        </div>
+
+        <!-- 4 MANTENIMIENTOS -->
+        <div class="feature-card">
+            <i class="ri-settings-3-line"></i>
+            <h3>Mantenimientos</h3>
+            <p>Registra cualquier intervención en la flota (tipo de componente utilizado, producto, kilómetro en
+                en el que se hizo, etc.).</p>
+        </div>
+
+        <!-- 5 OBLIGACIONES -->
+        <div class="feature-card">
+            <i class="ri-file-list-3-line"></i>
+            <h3>Obligaciones</h3>
+            <p>Registra tareas inherentes a los vehículos (ITV, vigencia de seguros, permiso de circulación,...)</p>
+        </div>
+
+        <!-- 6 PROVEEDORES -->
+        <div class="feature-card">
+            <i class="ri-store-2-line"></i>
+            <h3>Proveedores</h3>
+            <p>Archiva información completa de talleres, aseguradoras y empresas de toda clase de servicios.</p>
+        </div>
+
+        <!-- 7 FACTURAS -->
+        <div class="feature-card">
+            <i class="ri-bill-line"></i>
+            <h3>Facturas</h3>
+            <p>Control económico por medio de facturas; relacionando vehículo, proveedor, número de factura, fecha e importe.</p>
+        </div>
+
+        <!-- 8 GASTOS -->
+        <div class="feature-card">
+            <i class="ri-money-euro-circle-line"></i>
+            <h3>Gastos</h3>
+            <p>Todo el coste asociado a la flota, organizada por categoría y concepto, pudiendo estar o no relacionada
+                con una factura.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="docs" class="docs-section">
+    <h2 class="docs-title">Documentación</h2>
+    <h3 class="docs-subtitle">Aprende como instalar, usar y contribuir a <strong>Fleet+</strong></h3>
+
+    <!-- Instalación -->
+    <div class="docs-block">
+        <h2><i class="ri-download-2-line"></i> Instalación y Ejecución</h2>
+        <p>De momento, hasta que no esté preparado el ejecutable de <strong>fleet+</strong>, sólo existe una forma de usar el software y
+            es ejecutándolo desde el código fuente.</p>
+
+        <h3>Desde el Código Fuente</h3>
+        <p>Método ideal para contribuir o usar la versión más reciente.</p>
+
+        <h4>1. Requisitos previos</h4>
+        <ul>
+            <li>Python <strong>3.10+</strong></li>
+            <li>Git</li>
+        </ul>
+
+        <h4>2. Clonar el repositorio</h4>
+        <pre class="code-block">git clone https://github.com/larry-can/fleet_plus.git
+cd fleet_plus</pre>
+
+        <h4>3. Crear entorno virtual e instalar dependencias</h4>
+        <pre class="code-block">python -m venv venv
+source venv/bin/activate   # Linux/macOS
+venv\Scripts\activate      # Windows
+
+pip install -r requirements.txt</pre>
+
+        <h4>4. Ejecutar fleet+</h4>
+        <pre class="code-block">python app.py</pre>
+    </div>
+
+    <!-- Funcionalidades -->
+    <div class="docs-block">
+        <h2><i class="ri-apps-2-line"></i> Guía de Funcionalidades</h2>
+
+        <p><strong>fleet+</strong> se organiza en varios módulos accesibles desde la interfaz principal:</p>
+
+        <ul class="docs-feature-list">
+            <li><strong>Vehículos:</strong> gestión completa de cada vehículo, historial e informes en PDF.</li>
+            <li><strong>Componentes:</strong> define cualquier tipo de componente usado por la flota.</li>
+            <li><strong>Productos:</strong> catálogo organizado, marcas, modelos y tipo.</li>
+            <li><strong>Mantenimientos:</strong> registra intervenciones, kilometraje y componente utilizado.</li>
+            <li><strong>Obligaciones:</strong> control de ITV, seguros y documentación.</li>
+            <li><strong>Proveedores:</strong> talleres, aseguradoras, empresas de servicios.</li>
+            <li><strong>Facturas:</strong> importes, fechas y relación con vehículos.</li>
+            <li><strong>Gastos:</strong> control económico general, categorías y totales.</li>
+        </ul>
+    </div>
+
+    <!-- Contribuir -->
+    <div class="docs-block">
+        <h2><i class="ri-git-branch-line"></i> Contribuir a fleet+</h2>
+        <p>fleet+ es un proyecto open-source. Cualquier aportación es bienvenida.</p>
+
+        <ul>
+            <li><strong>Reportar errores:</strong> abre un <em>Issue</em> en GitHub.</li>
+            <li><strong>Sugerir nuevas funciones:</strong> crea un <em>Feature Request</em>.</li>
+            <li><strong>Contribuir código:</strong> haz un Fork, implementa tus mejoras y envía un Pull Request.</li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    © 2025 fleet+. Proyecto open-source. Licencia GPLv3.
+</footer>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- JS propio -->
+<script src="main.js"></script>
+
+</body>
+</html>
